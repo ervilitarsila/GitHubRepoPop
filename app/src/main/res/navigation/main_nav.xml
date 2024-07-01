@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/users"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ervilitasila.githubrepopop.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <action
+        android:id="@+id/action_homeFragment_to_pullRequestFragment"
+        app:destination="@id/pullRequestFragment" />
+
+    <fragment
+        android:id="@+id/pullRequestFragment"
+        android:name="com.ervilitasila.githubrepopop.ui.pullrequest.PullRequestFragment"
+        android:label="fragment_pull_request"
+        tools:layout="@layout/fragment_pull_request">
+        <argument
+            android:name="repository"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_userDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
