@@ -1,4 +1,4 @@
-package com.ervilitasila.githubrepopop.ui.pullrequest
+package com.ervilitasila.githubrepopop.view.pullrequest
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ervilitasila.githubrepopop.R
 import com.ervilitasila.githubrepopop.databinding.ItemPullRequestBinding
-import com.ervilitasila.githubrepopop.databinding.ItemRepositoryBinding
-import com.ervilitasila.githubrepopop.model.PullRequest
-import com.ervilitasila.githubrepopop.model.Repository
+import com.ervilitasila.githubrepopop.data.model.PullRequest
 
 class PullRequestAdapter (private val context: Context?,
     private var pullRequestList: List<PullRequest>

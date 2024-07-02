@@ -1,4 +1,4 @@
-package com.ervilitasila.githubrepopop.ui.pullrequest
+package com.ervilitasila.githubrepopop.view.pullrequest
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ervilitasila.githubrepopop.R
-import com.ervilitasila.githubrepopop.databinding.FragmentHomeBinding
 import com.ervilitasila.githubrepopop.databinding.FragmentPullRequestBinding
-import com.ervilitasila.githubrepopop.model.PullRequest
-import com.ervilitasila.githubrepopop.model.Repository
-import com.ervilitasila.githubrepopop.model.User
-import com.ervilitasila.githubrepopop.ui.home.RepositoryAdapter
+import com.ervilitasila.githubrepopop.data.model.PullRequest
+import com.ervilitasila.githubrepopop.data.model.User
 
 class PullRequestFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.ervilitasila.githubrepopop.model
+package com.ervilitasila.githubrepopop.data.model
 
 data class PullRequest(
     var id: Int,

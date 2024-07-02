@@ -1,4 +1,4 @@
-package com.ervilitasila.githubrepopop.model
+package com.ervilitasila.githubrepopop.data.model
 
 import com.squareup.moshi.Json
 

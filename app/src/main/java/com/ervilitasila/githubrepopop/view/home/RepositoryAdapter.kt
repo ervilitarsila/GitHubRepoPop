@@ -1,4 +1,4 @@
-package com.ervilitasila.githubrepopop.ui.home
+package com.ervilitasila.githubrepopop.view.home
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ervilitasila.githubrepopop.R
 import com.ervilitasila.githubrepopop.databinding.ItemRepositoryBinding
-import com.ervilitasila.githubrepopop.model.Repository
+import com.ervilitasila.githubrepopop.data.model.Repository
 
 class RepositoryAdapter(
     private val context: Context?,

@@ -1,22 +1,20 @@
-package com.ervilitasila.githubrepopop.ui.home
+package com.ervilitasila.githubrepopop.view.home
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ervilitasila.githubrepopop.R
 import com.ervilitasila.githubrepopop.databinding.FragmentHomeBinding
-import com.ervilitasila.githubrepopop.model.Repository
-import com.ervilitasila.githubrepopop.model.User
+import com.ervilitasila.githubrepopop.data.model.Repository
+import com.ervilitasila.githubrepopop.data.model.User
+import com.ervilitasila.githubrepopop.viewmodel.RepositoryViewModel
 
 class HomeFragment : Fragment() {
 
+    private lateinit var viewModel: RepositoryViewModel
     private var viewBinding: FragmentHomeBinding? = null
     private var selectedRepository: String? = null
 

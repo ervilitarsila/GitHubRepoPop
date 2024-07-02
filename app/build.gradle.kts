@@ -75,6 +75,7 @@ dependencies {
     //Moshi
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
+    implementation(libs.moshi.retrofit)
 
     // Test
     testImplementation(libs.androidx.core.testing)
