@@ -44,7 +44,7 @@ class RepositoryAdapter(
                 viewBinding.ownerName.text = repository.owner.name
 
                 viewBinding.itemRepository.setOnClickListener {
-                    itemClickListener?.invoke(repository.owner.login, this)
+                    itemClickListener?.invoke(repository.name, this)
                 }
             }
         }
@@ -54,4 +54,4 @@ class RepositoryAdapter(
         }
     }
 
-    typealias OnItemClickedListener = (userName: String, viewHolder: RepositoryAdapter.ViewHolder) -> Unit
+    typealias OnItemClickedListener = (repositoryName: String, viewHolder: RepositoryAdapter.ViewHolder) -> Unit
