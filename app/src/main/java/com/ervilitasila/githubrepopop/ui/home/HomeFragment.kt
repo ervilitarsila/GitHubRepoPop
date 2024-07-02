@@ -54,12 +54,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun setMockData()= listOf(
-        Repository(1, "teste1sdsdsdsdsdsdsdsdsdsdddddddssssssss", "Body teste 1 fsdfs lksn kjn jjbj hvh gvh bkj bk jn kh hv j vjh vj hvjhvjhvjhvj jhvjhvj hvjhvjhv jhvjhvjh vjhv jhv jhv jh vjh vj hvj hvj hvjhv jhv jh v",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        Repository(1, "teste2", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        Repository(1, "teste3", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        Repository(1, "teste4", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        Repository(1, "teste5", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        Repository(1, "teste6", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com"))
-
+        Repository(1, "Repository 1", "Body teste 1 fsdfs lksn kjn jjbj hvh gvh bkj bk jn kh hv j vjh vj hvjhvjhvjhvj jhvjhvj hvjhvjhv jhvjhvjh vjhv jhv jhv jh vjh vj hvj hvj hvjhv jhv jh v",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        Repository(1, "Repository 2", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        Repository(1, "Repository 3", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        Repository(1, "Repository 4", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        Repository(1, "Repository 5", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        Repository(1, "Repository 6", "Body teste 1",500, 1523, 456, 5 , User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com"))
     )
 }
