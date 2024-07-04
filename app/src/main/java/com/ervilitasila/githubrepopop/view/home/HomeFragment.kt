@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ervilitasila.githubrepopop.databinding.FragmentHomeBinding
 import com.ervilitasila.githubrepopop.data.model.Repository
 import com.ervilitasila.githubrepopop.data.model.User
-import com.ervilitasila.githubrepopop.viewmodel.RepositoryViewModel
+import javax.inject.Inject
 
 class HomeFragment : Fragment() {
-
-    private lateinit var viewModel: RepositoryViewModel
+    @Inject
+    lateinit var repositoryViewModel: RepositoryViewModel
     private var viewBinding: FragmentHomeBinding? = null
     private var selectedRepository: String? = null
 

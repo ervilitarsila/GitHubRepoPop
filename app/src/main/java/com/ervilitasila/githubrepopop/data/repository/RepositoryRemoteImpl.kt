@@ -6,12 +6,15 @@ import com.ervilitasila.githubrepopop.data.model.PullRequest
 import com.ervilitasila.githubrepopop.data.model.Repository
 import com.ervilitasila.githubrepopop.data.model.User
 import com.ervilitasila.githubrepopop.data.network.RemoteDataSource
+import dagger.Module
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class RepositoryRemoteImpl: RepositoryRemote {
+@Module
+class RepositoryRemoteImpl @Inject constructor(): RepositoryRemote {
 
     private val compositeDisposable = CompositeDisposable()
     private val remoteDataSource = RemoteDataSource()

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.safeargsKotlin)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -76,6 +77,14 @@ dependencies {
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
     implementation(libs.moshi.retrofit)
+
+    // kps
+    implementation(libs.ksp.gradlePlugin)
+
+    //Dagger
+    implementation(libs.dagger)
+    ksp(libs.dagger.compiler)
+    kspTest(libs.dagger.compiler)
 
     // Test
     testImplementation(libs.androidx.core.testing)
