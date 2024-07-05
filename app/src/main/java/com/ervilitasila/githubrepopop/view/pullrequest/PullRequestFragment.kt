@@ -52,7 +52,7 @@ class PullRequestFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewBinding?.repositoryName?.text = repositorySelected?.name.toString()
-        viewBinding?.pullrequestTotal?.text = repositorySelected?.openIssues.toString() + " closed"
+        viewBinding?.pullrequestTotal?.text = "/ " + repositorySelected?.openIssues.toString() + " closed"
 
 //        loadingPullRequests()
         observeAllPullRequests()
