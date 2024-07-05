@@ -1,5 +1,6 @@
 package com.ervilitasila.githubrepopop.view.home
 
+import Repository
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -11,9 +12,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ervilitasila.githubrepopop.data.di.DaggerAppComponent
 import com.ervilitasila.githubrepopop.databinding.FragmentHomeBinding
-import com.ervilitasila.githubrepopop.data.model.Repository
 import com.ervilitasila.githubrepopop.data.model.User
 import androidx.lifecycle.Observer
+import com.ervilitasila.githubrepopop.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import javax.inject.Inject
 
@@ -21,7 +22,7 @@ class HomeFragment : Fragment() {
     @Inject
     lateinit var repositoryViewModel: RepositoryViewModel
     private var viewBinding: FragmentHomeBinding? = null
-    private var selectedRepository: String? = null
+    private var selectedRepository: Repository? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -88,9 +89,11 @@ class HomeFragment : Fragment() {
                 }
             )
     }
-    private fun navigateToPullRequestFragment(repositoryName: String) {
-        val action = HomeFragmentDirections.actionHomeFragmentToPullRequestFragment(repositoryName)
-        findNavController().navigate(action)
+    private fun navigateToPullRequestFragment(repository: Repository) {
+        val bundle = Bundle().apply {
+            putParcelable("repository", repository)
+        }
+        findNavController().navigate(R.id.action_homeFragment_to_pullRequestFragment, bundle)
     }
 
     private fun showErrorDialog(message: String) {

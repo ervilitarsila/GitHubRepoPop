@@ -1,5 +1,6 @@
 package com.ervilitasila.githubrepopop.view.home
 
+import Repository
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ervilitasila.githubrepopop.R
 import com.ervilitasila.githubrepopop.databinding.ItemRepositoryBinding
-import com.ervilitasila.githubrepopop.data.model.Repository
 
 class RepositoryAdapter(
     private val context: Context?,
@@ -44,7 +44,7 @@ class RepositoryAdapter(
                 viewBinding.ownerName.text = repository.owner.name
 
                 viewBinding.itemRepository.setOnClickListener {
-                    itemClickListener?.invoke(repository.name, this)
+                    itemClickListener?.invoke(repository, this)
                 }
             }
         }
@@ -54,4 +54,4 @@ class RepositoryAdapter(
         }
     }
 
-    typealias OnItemClickedListener = (repositoryName: String, viewHolder: RepositoryAdapter.ViewHolder) -> Unit
+    typealias OnItemClickedListener = (repository: Repository, viewHolder: RepositoryAdapter.ViewHolder) -> Unit

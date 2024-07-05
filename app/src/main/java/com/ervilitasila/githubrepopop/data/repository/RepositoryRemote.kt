@@ -1,8 +1,8 @@
 package com.ervilitasila.githubrepopop.data.repository
 
+import Repository
 import androidx.lifecycle.LiveData
 import com.ervilitasila.githubrepopop.data.model.PullRequest
-import com.ervilitasila.githubrepopop.data.model.Repository
 import com.ervilitasila.githubrepopop.data.model.User
 
 interface RepositoryRemote {

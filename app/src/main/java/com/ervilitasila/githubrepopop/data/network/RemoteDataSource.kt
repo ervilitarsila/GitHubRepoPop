@@ -1,7 +1,7 @@
 package com.ervilitasila.githubrepopop.data.network
 
+import Repository
 import com.ervilitasila.githubrepopop.data.model.PullRequest
-import com.ervilitasila.githubrepopop.data.model.Repository
 import com.ervilitasila.githubrepopop.data.model.User
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers

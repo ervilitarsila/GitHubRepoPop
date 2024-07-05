@@ -1,10 +1,10 @@
 package com.ervilitasila.githubrepopop.data.repository
 
+import Repository
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ervilitasila.githubrepopop.data.model.PullRequest
-import com.ervilitasila.githubrepopop.data.model.Repository
 import com.ervilitasila.githubrepopop.data.model.User
 import com.ervilitasila.githubrepopop.data.network.RemoteDataSource
 import dagger.Module
