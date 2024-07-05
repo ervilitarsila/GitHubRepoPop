@@ -7,7 +7,7 @@ import com.ervilitasila.githubrepopop.data.model.User
 
 interface RepositoryRemote {
 
-    fun listRepositories(page: Int) : LiveData<List<Repository>>
+    fun listRepositories(page: String) : LiveData<List<Repository>>
 
     fun getOwner(ownerName: String) : LiveData<User>
 

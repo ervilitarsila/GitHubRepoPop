@@ -12,7 +12,7 @@ import com.ervilitasila.githubrepopop.data.model.Repository
 
 class RepositoryAdapter(
     private val context: Context?,
-    private var repositoryList: List<Repository>,
+    var repositoryList: List<Repository>,
     private val itemClickListener: OnItemClickedListener? = null
     ) : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
 

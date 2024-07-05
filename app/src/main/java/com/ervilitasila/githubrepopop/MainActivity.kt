@@ -1,5 +1,6 @@
 package com.ervilitasila.githubrepopop
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import com.ervilitasila.githubrepopop.data.di.DaggerAppComponent
 import com.ervilitasila.githubrepopop.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +22,9 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val repository = (application as MyApplication).appComponent.repositoryComponent()
+        (application as MyApplication).appComponent.inject(this)
+        (application as MyApplication).appComponent.repositoryComponent()
+        (application as MyApplication).appComponent.pullRequestComponent()
 
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_container) as NavHostFragment

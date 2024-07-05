@@ -15,8 +15,8 @@ interface AppComponent {
     interface Factory {
         fun create(@BindsInstance context: Context): AppComponent
     }
-    fun inject(activity: MainActivity)
 
+    fun inject(activity: MainActivity)
     fun repositoryComponent(): RepositoryComponent.Factory
     fun pullRequestComponent(): PullRequestComponent.Factory
 }

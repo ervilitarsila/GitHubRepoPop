@@ -9,8 +9,9 @@ import io.reactivex.schedulers.Schedulers
 
 class RemoteDataSource {
 
-    fun listRepositories(page: Int): Observable<List<Repository>> = RetrofitClient.gitHubApi
-        .listRepositories(page)
+    fun listRepositories(page: String): Observable<List<Repository>> = RetrofitClient.gitHubApi
+        .listRepositories("language:Kotlin", "stars", page)
+        .map { it.items }
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
 

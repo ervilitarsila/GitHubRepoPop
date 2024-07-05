@@ -2,17 +2,21 @@ package com.ervilitasila.githubrepopop.data.network
 
 import com.ervilitasila.githubrepopop.data.model.PullRequest
 import com.ervilitasila.githubrepopop.data.model.Repository
+import com.ervilitasila.githubrepopop.data.model.RepositoryResponse
 import com.ervilitasila.githubrepopop.data.model.User
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface GitHubApi {
 
-    @GET("/search/repositories?q=language:Kotlin&sort=stars&page={page}")
+    @GET("/search/repositories")
     fun listRepositories(
-        @Path("page") page: Int
-    ): Observable<List<Repository>>
+        @Query("q") query: String = "language:Kotlin",
+        @Query("sort") sort: String = "stars",
+        @Query("page") page: String
+    ): Observable<RepositoryResponse>
 
     @GET("/user/{ownerName}")
     fun getOwner(

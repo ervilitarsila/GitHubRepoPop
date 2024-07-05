@@ -1,15 +1,20 @@
 package com.ervilitasila.githubrepopop.view.home
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ervilitasila.githubrepopop.data.di.DaggerAppComponent
 import com.ervilitasila.githubrepopop.databinding.FragmentHomeBinding
 import com.ervilitasila.githubrepopop.data.model.Repository
 import com.ervilitasila.githubrepopop.data.model.User
+import androidx.lifecycle.Observer
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {
@@ -18,17 +23,27 @@ class HomeFragment : Fragment() {
     private var viewBinding: FragmentHomeBinding? = null
     private var selectedRepository: String? = null
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d("HomeFragment", "onAttach")
+        val appComponent = DaggerAppComponent.factory().create(context.applicationContext)
+        appComponent.repositoryComponent().create().inject(this)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("HomeFragment", "onCreateView")
         viewBinding = FragmentHomeBinding.inflate(inflater, container, false)
         return viewBinding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadingRepositories()
+        Log.d("HomeFragment", "onViewCreated")
+//        loadingRepositories()
+        observeAllRepositories()
     }
 
     private fun loadingRepositories() {
@@ -46,9 +61,43 @@ class HomeFragment : Fragment() {
         viewBinding?.recyclerRepositories?.adapter = adapter
     }
 
+    private fun observeAllRepositories() {
+        Log.d("HomeFragment", "observeAllRepositories")
+        repositoryViewModel.listRepositories().observe(viewLifecycleOwner, Observer { repositories ->
+            Log.d("HomeFragment", "Repositories observed: $repositories")
+            displayRepositories(repositories)
+        })
+    }
+
+    private fun displayRepositories(repositories: List<Repository>) {
+        Log.d("HomeFragment", "displayRepositories: ${repositories.size}")
+        if (repositories.isEmpty()) {
+            showErrorDialog("Repository Empty")
+            return
+        }
+
+        val layoutManager = LinearLayoutManager(context)
+        viewBinding?.recyclerRepositories?.layoutManager = layoutManager
+        viewBinding?.recyclerRepositories?.adapter =
+            RepositoryAdapter(
+                context,
+                repositories,
+                itemClickListener = { repository, viewHolder ->
+                    selectedRepository = repository
+                    navigateToPullRequestFragment(selectedRepository!!)
+                }
+            )
+    }
     private fun navigateToPullRequestFragment(repositoryName: String) {
         val action = HomeFragmentDirections.actionHomeFragmentToPullRequestFragment(repositoryName)
         findNavController().navigate(action)
+    }
+
+    private fun showErrorDialog(message: String) {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Error")
+            .setMessage(message)
+            .show()
     }
 
     private fun setMockData()= listOf(
