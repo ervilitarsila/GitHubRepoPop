@@ -5,7 +5,7 @@
     android:backgroundTint="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
-    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp"
     android:id="@+id/item_repository">
 
     <androidx.constraintlayout.widget.ConstraintLayout
