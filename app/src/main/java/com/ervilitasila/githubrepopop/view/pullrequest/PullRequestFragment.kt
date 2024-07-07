@@ -54,7 +54,7 @@ class PullRequestFragment : Fragment() {
         viewBinding?.repositoryName?.text = repositorySelected?.name.toString()
         viewBinding?.pullrequestTotal?.text = "/ " + repositorySelected?.openIssues.toString() + " closed"
 
-//        loadingPullRequests()
+        showLoading(true)
         observeAllPullRequests()
         setupBackButton()
     }
@@ -84,6 +84,7 @@ class PullRequestFragment : Fragment() {
 
     private fun displayPullRequests(pullRequests: List<PullRequest>) {
         Log.d("PullRequestFragment", "displayRepositories: ${pullRequests.size}")
+        showLoading(false)
         if (pullRequests.isEmpty()) {
             showErrorDialog("PullRequestFragment Empty")
             return
@@ -110,6 +111,11 @@ class PullRequestFragment : Fragment() {
             .setTitle("Error")
             .setMessage(message)
             .show()
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        viewBinding?.loadingFrame?.visibility = if (isLoading) View.VISIBLE else View.GONE
+        viewBinding?.recyclerPullrequests?.visibility = if (isLoading) View.GONE else View.VISIBLE
     }
 
     private fun setMockData()= listOf(

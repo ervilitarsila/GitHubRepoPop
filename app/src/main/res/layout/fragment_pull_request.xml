@@ -46,22 +46,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <FrameLayout
-        android:id="@+id/loading_frame"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:visibility="gone"
-        android:background="@color/white">
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-
-    </FrameLayout>
-
     <TextView
         android:id="@+id/pullrequest_issue_count"
         android:layout_width="wrap_content"
@@ -88,6 +72,20 @@
         app:layout_constraintBottom_toTopOf="@id/recycler_pullrequests"
         app:layout_constraintStart_toEndOf="@id/pullrequest_issue_count"
         app:layout_constraintTop_toBottomOf="@id/pullrequest_toolbar" />
+
+    <FrameLayout
+        android:id="@+id/loading_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="visible"/>
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_pullrequests"

@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("HomeFragment", "onViewCreated")
-//        loadingRepositories()
+        showLoading(true)
         observeAllRepositories()
     }
 
@@ -72,6 +72,7 @@ class HomeFragment : Fragment() {
 
     private fun displayRepositories(repositories: List<Repository>) {
         Log.d("HomeFragment", "displayRepositories: ${repositories.size}")
+        showLoading(false)
         if (repositories.isEmpty()) {
             showErrorDialog("Repository Empty")
             return
@@ -94,6 +95,11 @@ class HomeFragment : Fragment() {
             putParcelable("repository", repository)
         }
         findNavController().navigate(R.id.action_homeFragment_to_pullRequestFragment, bundle)
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        viewBinding?.loadingFrame?.visibility = if (isLoading) View.VISIBLE else View.GONE
+        viewBinding?.recyclerRepositories?.visibility = if (isLoading) View.GONE else View.VISIBLE
     }
 
     private fun showErrorDialog(message: String) {
