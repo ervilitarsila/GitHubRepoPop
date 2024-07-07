@@ -66,7 +66,7 @@ class PullRequestFragment : Fragment() {
 
         val adapter = PullRequestAdapter(
             context,
-            setMockData()
+            listOf()
         )
         viewBinding?.recyclerPullrequests?.adapter = adapter
 
@@ -113,11 +113,11 @@ class PullRequestFragment : Fragment() {
     }
 
     private fun setMockData()= listOf(
-        PullRequest(1, "teste1sdsdsdsdsdsdsdsdsdsdddddddssssssss", "Body teste 1 fsdfs lksn kjn jjbj hvh gvh bkj bk jn kh hv j vjh vj hvjhvjhvjhvj jhvjhvj hvjhvjhv jhvjhvjh vjhv jhv jhv jh vjh vj hvj hvj hvjhv jhv jh v", User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        PullRequest(1, "teste2", "Body teste 1", User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        PullRequest(1, "teste3", "Body teste 1", User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        PullRequest(1, "teste4", "Body teste 1", User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
-        PullRequest(1, "teste5", "Body teste 1", User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com"))
+        PullRequest(1, "teste1sdsdsdsdsdsdsdsdsdsdddddddssssssss", "Body teste 1 fsdfs lksn kjn jjbj hvh gvh bkj bk jn kh hv j vjh vj hvjhvjhvjhvj jhvjhvj hvjhvjhv jhvjhvjh vjhv jhv jhv jh vjh vj hvj hvj hvjhv jhv jh v", "https://github.com/user/repo/pull/1", "2023-05-20", User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        PullRequest(1, "teste2", "Body teste 1", "https://github.com/user/repo/pull/1", "2023-05-20",User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        PullRequest(1, "teste3", "Body teste 1", "https://github.com/user/repo/pull/1", "2023-05-20",User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        PullRequest(1, "teste4", "Body teste 1", "https://github.com/user/repo/pull/1", "2023-05-20",User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com")),
+        PullRequest(1, "teste5", "Body teste 1", "https://github.com/user/repo/pull/1", "2023-05-20",User(1, "user 1", "https://avatars.githubusercontent.com/u/1?v=4", "www.google.com"))
     )
 
 }

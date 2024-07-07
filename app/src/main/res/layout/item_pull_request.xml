@@ -53,6 +53,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ic_computer"/>
 
+        <TextView
+            android:id="@+id/pullrequest_lab_created"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_eye"
+            android:text="@string/date_created_at"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pullrequest_description" />
+
+        <TextView
+            android:id="@+id/pullrequest_created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/pullrequest_lab_created"
+            app:layout_constraintTop_toTopOf="@+id/pullrequest_lab_created"
+            app:layout_constraintBottom_toBottomOf="@+id/pullrequest_lab_created"
+            android:layout_marginStart="6dp"/>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_user_profile"
             android:layout_width="50dp"
@@ -66,7 +88,7 @@
                 android:id="@+id/user_profile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@mipmap/ic_github" />
 
         </androidx.cardview.widget.CardView>
 
