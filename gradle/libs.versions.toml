@@ -24,7 +24,6 @@ moshiVersion = "1.15.1"
 moshiKotlinVersion = "2.9.0"
 daggerVersion = "2.51.1"
 ksp = "2.0.0-1.0.21"
-kotlinExVersion = "2.0.20-Beta1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -65,5 +64,4 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 safeargsKotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationFragment" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-kotlinExtensions = { id = "org.jetbrains.kotlin.android.extensions", version.ref = "kotlinExVersion" }
 
