@@ -1,6 +1,6 @@
 [versions]
 agp = "8.3.1"
-kotlin = "1.9.0"
+kotlin = "2.0.0"
 coreKtx = "1.13.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -21,6 +21,9 @@ fragmentVersion = "1.7.1"
 navigationTesting = "2.7.7"
 espressoContrib = "3.5.1"
 moshiVersion = "1.15.1"
+moshiKotlinVersion = "2.9.0"
+daggerVersion = "2.51.1"
+ksp = "2.0.0-1.0.21"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -50,10 +53,15 @@ fragment-testing = { group = "androidx.fragment", name = "fragment-testing", ver
 androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigationTesting" }
 androidx-espresso-contrib = { group = "androidx.test.espresso", name = "espresso-contrib", version.ref = "espressoContrib" }
 moshi = {  group = "com.squareup.moshi", name = "moshi", version.ref = "moshiVersion"}
-moshi-kotlin = {  group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshiVersion"}
+moshi-kotlin = {  group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshiVersion"}
+moshi-retrofit = {  group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "moshiKotlinVersion"}
+dagger = {  group = "com.google.dagger", name = "dagger", version.ref = "daggerVersion"}
+dagger-compiler = {  group = "com.google.dagger", name = "dagger-compiler", version.ref = "daggerVersion"}
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 safeargsKotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationFragment" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 

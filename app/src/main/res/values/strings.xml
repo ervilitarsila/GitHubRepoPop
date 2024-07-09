@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GitHubRepoPop</string>
+    <string name="app_title">GitHub Ervili</string>
+    <string name="date_created_at">Date Created: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

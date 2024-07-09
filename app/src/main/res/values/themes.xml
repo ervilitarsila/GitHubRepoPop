@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.GitHubRepoPop" parent="Base.Theme.GitHubRepoPop" />
+
+    <!-- Tema da tela de splash -->
+    <style name="Theme.GitHubRepoPop.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+    </style>
 </resources>
