@@ -20,7 +20,7 @@
         android:label="fragment_pull_request"
         tools:layout="@layout/fragment_pull_request">
         <action
-            android:id="@+id/action_userDetailFragment_to_homeFragment"
+            android:id="@+id/action_pullRequestFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

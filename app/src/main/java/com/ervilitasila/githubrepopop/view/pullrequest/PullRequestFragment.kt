@@ -89,7 +89,7 @@ class PullRequestFragment : Fragment() {
 
     private fun setupBackButton() {
         viewBinding?.btnBack?.setOnClickListener {
-            findNavController().navigate(R.id.action_userDetailFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_pullRequestFragment_to_homeFragment)
         }
     }
 
@@ -99,6 +99,9 @@ class PullRequestFragment : Fragment() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Error")
             .setMessage(message)
+            .setPositiveButton("Back to Home") { _, _ ->
+                findNavController().navigate(R.id.action_pullRequestFragment_to_homeFragment)
+            }
             .show()
     }
 

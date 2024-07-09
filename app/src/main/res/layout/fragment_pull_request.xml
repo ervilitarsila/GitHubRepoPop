@@ -38,6 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:text="Repository Name"
                 android:textSize="20sp"
                 android:textStyle="bold" />
