@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="https://github.com/ervilitarsila/GitHubRepoPop/blob/master/github_logo.png" width="300" alt="GitHub App">
 <br>
-GitHubRepoPop built with Kotlin and MVVM</h1>
+App built with Kotlin and MVVM</h1>
 
 <p align="center">
   <a href="https://github.com/KotlinBy/awesome-kotlin">
