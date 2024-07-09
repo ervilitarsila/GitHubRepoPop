@@ -73,7 +73,7 @@ class PullRequestFragment : Fragment() {
         Log.d("PullRequestFragment", "displayRepositories: ${pullRequests.size}")
         showLoading(false)
         if (pullRequests.isEmpty()) {
-            showErrorDialog("PullRequestFragment Empty")
+            showErrorDialog("There are no pull requests for this repository!")
             return
         }
         viewBinding?.pullrequestIssueCount?.text = pullRequests.size.toString() + " opened"
@@ -94,6 +94,8 @@ class PullRequestFragment : Fragment() {
     }
 
     private fun showErrorDialog(message: String) {
+        viewBinding?.pullrequestTotal?.text = ""
+        viewBinding?.pullrequestIssueCount?.text = ""
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Error")
             .setMessage(message)

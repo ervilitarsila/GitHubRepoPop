@@ -50,12 +50,6 @@ class PullRequestViewModelTest {
         assert(result.value?.isEmpty() ?: false)
     }
 
-    @Test
-    fun listPullRequests_error() {
-        val errorMessage = "Erro de rede"
-        // ...
-    }
-
     private fun mockPullRequests() = MutableLiveData<List<PullRequest>>().apply {
         value = listOf(
             PullRequest(
