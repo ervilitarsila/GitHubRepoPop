@@ -53,6 +53,7 @@ class HomeFragment : Fragment() {
         showLoading(true)
         setupRecyclerView()
         observeAllRepositories()
+        observeError()
         loadRepositories(page)
     }
 
@@ -105,6 +106,16 @@ class HomeFragment : Fragment() {
         }
 
         adapter.addRepositories(repositories)
+    }
+
+    private fun observeError() {
+        Log.d("HomeFragment", "observeError")
+        repositoryViewModel.error.observe(viewLifecycleOwner, Observer { errorMessage ->
+            errorMessage?.let {
+                Log.d("HomeFragment", "Error observed: $it")
+                showErrorDialog(it)
+            }
+        })
     }
 
     private fun navigateToPullRequestFragment(repository: Repository) {

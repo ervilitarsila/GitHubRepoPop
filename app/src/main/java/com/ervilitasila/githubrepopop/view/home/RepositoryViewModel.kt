@@ -1,21 +1,29 @@
 package com.ervilitasila.githubrepopop.view.home
 
-import Repository
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import Repository
 import com.ervilitasila.githubrepopop.data.repository.RepositoryRemote
-import com.ervilitasila.githubrepopop.data.repository.RepositoryRemoteImpl
 import javax.inject.Inject
 
 class RepositoryViewModel @Inject constructor(private val repository: RepositoryRemote) : ViewModel() {
     val repositories = MutableLiveData<List<Repository>>()
     private val allRepositories = mutableListOf<Repository>()
+    val error = MutableLiveData<String>()
 
     fun loadRepositories(page: Int) {
-        repository.listRepositories(page.toString()).observeForever { newRepositories ->
-            allRepositories.addAll(newRepositories)
-            repositories.value = allRepositories
+        try {
+            repository.listRepositories(page.toString()).observeForever { newRepositories ->
+                if (newRepositories != null) {
+                    allRepositories.addAll(newRepositories)
+                    repositories.value = allRepositories
+                } else {
+                    error.value = "Failed to load repositories"
+                }
+            }
+        } catch (e: Exception) {
+            error.value = e.message
         }
     }
 }
+
